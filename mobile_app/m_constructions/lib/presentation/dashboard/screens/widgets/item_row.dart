@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:m_constructions/presentation/app/widgets/common_rounded_button.dart';
 
 class ItemRow extends StatelessWidget {
   const ItemRow({Key? key}) : super(key: key);
@@ -29,7 +30,15 @@ class ItemRow extends StatelessWidget {
         Expanded(
           child: Container(
             height: 40,
-            child: Center(child: Text('Action')),
+            child: Center(
+              child: CommonRoundedButton(
+                height: 28,
+                lable: 'Remove',
+                width: 80,
+                fontSize: 12,
+                onPressed: () {},
+              ),
+            ),
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black),
             ),

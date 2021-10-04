@@ -5,21 +5,18 @@ import 'package:m_constructions/presentation/app/widgets/common_password_input.d
 import 'package:m_constructions/presentation/app/widgets/common_rounded_button.dart';
 import 'package:m_constructions/presentation/dashboard/dashboard.dart';
 import 'package:m_constructions/presentation/start/site_manage_login.dart';
-import 'package:m_constructions/presentation/start/splash_screen.dart';
 
 class LoginScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text("Login"),
-      ),
+      appBar: null,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 60.0),
+              padding: const EdgeInsets.only(top: 100.0),
               child: Center(
                 child: Container(
                     width: 200,
@@ -43,7 +40,7 @@ class LoginScreen extends HookConsumerWidget {
               },
               child: Text(
                 'Site manager?',
-                style: TextStyle(color: Colors.blue, fontSize: 15),
+                style: TextStyle(color: Colors.black, fontSize: 15),
               ),
             ),
             CommonRoundedButton(
@@ -57,7 +54,6 @@ class LoginScreen extends HookConsumerWidget {
             SizedBox(
               height: 130,
             ),
-            Text('Create Account')
           ],
         ),
       ),

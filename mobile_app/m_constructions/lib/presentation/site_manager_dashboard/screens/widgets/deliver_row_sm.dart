@@ -29,7 +29,10 @@ class DeliverRowSm extends StatelessWidget {
         Expanded(
           child: Container(
             height: 40,
-            child: Center(child: Text('Action')),
+            child: Center(
+                child: Text('Check',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16))),
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black),
             ),

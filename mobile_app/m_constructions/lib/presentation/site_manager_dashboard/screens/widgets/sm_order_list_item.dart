@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:m_constructions/presentation/app/widgets/common_rounded_button.dart';
 
-class SmOrderListItem extends StatelessWidget {
+class SmOrderListItem extends HookConsumerWidget {
   const SmOrderListItem({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final count = useState(0);
     return Container(
       height: 120,
       decoration: BoxDecoration(
@@ -37,7 +40,7 @@ class SmOrderListItem extends StatelessWidget {
                 decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
                     borderRadius: BorderRadius.circular(10)),
-                child: Center(child: Text('0')),
+                child: Center(child: Text(count.value.toString())),
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -47,7 +50,9 @@ class SmOrderListItem extends StatelessWidget {
                     lable: '+',
                     width: 80,
                     fontSize: 12,
-                    onPressed: () {},
+                    onPressed: () {
+                      count.value++;
+                    },
                   ),
                   SizedBox(
                     height: 5,
@@ -57,7 +62,9 @@ class SmOrderListItem extends StatelessWidget {
                     lable: '-',
                     width: 80,
                     fontSize: 12,
-                    onPressed: () {},
+                    onPressed: () {
+                      count.value > 0 ? count.value-- : print("none");
+                    },
                   ),
                 ],
               ),

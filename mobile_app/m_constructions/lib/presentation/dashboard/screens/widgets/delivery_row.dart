@@ -29,7 +29,11 @@ class DeliveryRow extends StatelessWidget {
         Expanded(
           child: Container(
             height: 40,
-            child: Center(child: Text('Action')),
+            child: Center(
+                child: Icon(
+              Icons.check_box,
+              color: Colors.amber,
+            )),
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black),
             ),

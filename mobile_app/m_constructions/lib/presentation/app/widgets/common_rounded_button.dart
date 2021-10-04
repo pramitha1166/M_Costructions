@@ -22,12 +22,12 @@ class CommonRoundedButton extends StatelessWidget {
       height: height ?? 50,
       width: width ?? 250,
       decoration: BoxDecoration(
-          color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+          color: Colors.amber, borderRadius: BorderRadius.circular(20)),
       child: TextButton(
         onPressed: onPressed,
         child: Text(
           lable ?? 'Login',
-          style: TextStyle(color: Colors.white, fontSize: fontSize ?? 25),
+          style: TextStyle(color: Colors.black, fontSize: fontSize ?? 25),
         ),
       ),
     );

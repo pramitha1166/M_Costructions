@@ -12,6 +12,9 @@ class SMLoginScreen extends HookConsumerWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Site manager Login"),
+        backgroundColor: Colors.amber,
+        centerTitle: true,
+        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -32,12 +35,8 @@ class SMLoginScreen extends HookConsumerWidget {
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: CommonPasswordInput()),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'Site manager?',
-                style: TextStyle(color: Colors.blue, fontSize: 15),
-              ),
+            SizedBox(
+              height: 50,
             ),
             CommonRoundedButton(
               onPressed: () {

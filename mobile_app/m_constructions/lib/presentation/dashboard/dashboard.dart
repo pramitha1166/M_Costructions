@@ -38,10 +38,15 @@ class _BasicBottomNavBarState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_names[_selectedIndex]),
+        title: Text(
+          _names[_selectedIndex],
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+        ),
         centerTitle: true,
         elevation: 0,
+        backgroundColor: Colors.grey[100],
         leading: null,
+        automaticallyImplyLeading: false,
       ),
       body: _pages.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(

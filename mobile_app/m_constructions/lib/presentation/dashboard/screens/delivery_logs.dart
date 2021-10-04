@@ -7,55 +7,58 @@ class DeliveryLogs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          color: Colors.amber,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Expanded(
-                child: Container(
-                  height: 40,
-                  child: Center(child: Text('Item')),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          Container(
+            color: Colors.amber,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Expanded(
+                  child: Container(
+                    height: 40,
+                    child: Center(child: Text('Item')),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black),
+                    ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: Container(
-                  height: 40,
-                  child: Center(child: Text('Quantity')),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
+                Expanded(
+                  child: Container(
+                    height: 40,
+                    child: Center(child: Text('Quantity')),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black),
+                    ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: Container(
-                  height: 40,
-                  child: Center(child: Text('Action')),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
+                Expanded(
+                  child: Container(
+                    height: 40,
+                    child: Center(child: Text('Action')),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black),
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        DeliveryRow(),
-        DeliveryRow(),
-        DeliveryRow(),
-        DeliveryRow(),
-        SizedBox(
-          height: 100,
-        ),
-        CommonRoundedButton(
-          lable: "Accept Delivery",
-          onPressed: () {},
-        ),
-      ],
+          DeliveryRow(),
+          DeliveryRow(),
+          DeliveryRow(),
+          DeliveryRow(),
+          SizedBox(
+            height: 100,
+          ),
+          CommonRoundedButton(
+            lable: "Accept Delivery",
+            onPressed: () {},
+          ),
+        ],
+      ),
     );
   }
 }

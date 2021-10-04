@@ -19,6 +19,12 @@ class _BasicBottomNavBarState extends State<SMDashboard> {
     DeliveryLogs()
   ];
 
+  static const List<String> _title = <String>[
+    'Item List - SM',
+    'Orders',
+    'Deliver logs - SM'
+  ];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -29,23 +35,32 @@ class _BasicBottomNavBarState extends State<SMDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BottomNavigationBar Demo'),
+        title: Text(
+          _title[_selectedIndex],
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+        ),
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.grey[100],
+        leading: null,
+        automaticallyImplyLeading: false,
       ),
-      body: Center(
-        child: _pages.elementAt(_selectedIndex),
-      ),
+      body: _pages.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.amber,
+        fixedColor: Colors.brown,
+        unselectedItemColor: Colors.brown,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.call),
+            icon: Icon(Icons.dashboard_rounded),
             label: 'Item List',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.camera),
+            icon: Icon(Icons.list),
             label: 'Orders',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
+            icon: Icon(Icons.today_outlined),
             label: 'Delivery Logs',
           ),
         ],
