@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:m_constructions/presentation/app/widgets/common_rounded_button.dart';
 
 class CheckInvontoryCard extends StatelessWidget {
-  const CheckInvontoryCard({Key? key}) : super(key: key);
+  const CheckInvontoryCard({Key? key, required this.title}) : super(key: key);
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class CheckInvontoryCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'swdsdsd',
+                title,
                 style: TextStyle(fontSize: 18),
               ),
               CommonRoundedButton(
