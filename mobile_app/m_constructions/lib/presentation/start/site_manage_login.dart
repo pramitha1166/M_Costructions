@@ -30,11 +30,15 @@ class SMLoginScreen extends HookConsumerWidget {
             ),
             Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
-                child: CommonEmailInput()),
+                child: CommonEmailInput(
+                  onChanged: (value) => {},
+                )),
             Padding(
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
-                child: CommonPasswordInput()),
+                child: CommonPasswordInput(
+                  onChanged: (value) => {},
+                )),
             SizedBox(
               height: 50,
             ),

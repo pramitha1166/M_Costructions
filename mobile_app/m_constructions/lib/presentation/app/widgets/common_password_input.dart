@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CommonPasswordInput extends StatelessWidget {
-  const CommonPasswordInput({Key? key}) : super(key: key);
+  const CommonPasswordInput({Key? key, required this.onChanged})
+      : super(key: key);
+  final ValueChanged<String> onChanged;
 
   @override
   Widget build(BuildContext context) {
