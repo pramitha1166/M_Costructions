@@ -11,7 +11,7 @@ app.register_blueprint(product_route)
 
 CORS(app)
 
-connect(host=os.environ.get('MONGO_URI'))
+connect(host=os.environ.get('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false'))
 
 if __name__ == "__main__":
     app.debug = True

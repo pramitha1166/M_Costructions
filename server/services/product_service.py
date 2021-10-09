@@ -4,18 +4,13 @@ from utils.DecimalEncoder import Encoder
 import json
 from utils.JwtToken import validate_token
 
-@validate_token
+
 def add_product_service(product_data):
     try:
         title = product_data['title']
-        description = product_data['description']
-        image = product_data['image']
-        category = product_data['category']
-        price = product_data['price']
         quantity = product_data['quantity']
 
-        product = Product(title=title, description=description, image=image,
-                          category=category, price=price, quantity=quantity)
+        product = Product(title=title, quantity=quantity)
         product.save()
         return make_response({'message' : 'succesfully inserted'}, 201)   
     except Exception as e:
@@ -28,10 +23,6 @@ def get_product_service():
             product_data = {}
             product_data['_id'] = str(product.id)
             product_data['title'] = product.title
-            product_data['description'] = product.description
-            product_data['image'] = product.image
-            product_data['category'] = product.category
-            product_data['price'] = json.dumps(product.price, cls=Encoder)
             product_data['quantity'] = product.quantity
             products.append(product_data)
 

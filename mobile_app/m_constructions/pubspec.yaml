@@ -40,8 +40,7 @@ dependencies:
   table_sticky_headers: ^2.0.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  test: ^1.17.2
   auto_route_generator: ^2.1.0
   build_runner: null
 
