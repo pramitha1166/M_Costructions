@@ -57,10 +57,39 @@ class AddItem extends HookConsumerWidget {
                     'title': _itemName.value,
                     'quantity': _itemQuantity.value
                   });
+              _showMyDialog(context);
             },
           ),
         ],
       ),
+    );
+  }
+
+  Future<void> _showMyDialog(context) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Alert'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: const <Widget>[
+                Text('Successfully Added'),
+                Text('Item has been successully added'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Ok'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

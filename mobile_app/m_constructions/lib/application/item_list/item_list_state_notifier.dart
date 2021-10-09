@@ -34,4 +34,11 @@ class ItemListStateNotifier extends StateNotifier<ItemListState> {
     List<Item> _data = await _iItemListRepository.readItemList();
     state = state.copyWith(isLoading: false, data: _data);
   }
+
+  void deleteItem(List<Item> list, String id) async {
+    state = state.copyWith(
+      data: list,
+    );
+    List<Item> _data = await _iItemListRepository.deleteItem(id: id);
+  }
 }

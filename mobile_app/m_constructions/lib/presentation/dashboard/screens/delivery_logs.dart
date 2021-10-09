@@ -32,7 +32,7 @@ class DeliveryLogs extends HookConsumerWidget {
                 Expanded(
                   child: Container(
                     height: 40,
-                    child: Center(child: Text('Item')),
+                    child: Center(child: Text('Title')),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black),
                     ),
@@ -41,7 +41,7 @@ class DeliveryLogs extends HookConsumerWidget {
                 Expanded(
                   child: Container(
                     height: 40,
-                    child: Center(child: Text('Quantity')),
+                    child: Center(child: Text('Description')),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black),
                     ),
@@ -59,10 +59,22 @@ class DeliveryLogs extends HookConsumerWidget {
               ],
             ),
           ),
-          DeliveryRow(),
-          DeliveryRow(),
-          DeliveryRow(),
-          DeliveryRow(),
+          DeliveryRow(
+            title: "Title 1",
+            description: "descrioptn 1",
+          ),
+          DeliveryRow(
+            title: "Title 2",
+            description: "descrioptn 2",
+          ),
+          DeliveryRow(
+            title: "Title 3",
+            description: "descrioptn 3",
+          ),
+          DeliveryRow(
+            title: "Title 4",
+            description: "descrioptn 4",
+          ),
           SizedBox(
             height: 100,
           ),

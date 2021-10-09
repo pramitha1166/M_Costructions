@@ -105,7 +105,7 @@ class LoginScreen extends HookConsumerWidget {
           ),
           actions: <Widget>[
             TextButton(
-              child: const Text('Approve'),
+              child: const Text('Ok'),
               onPressed: () {
                 Navigator.of(context).pop();
               },

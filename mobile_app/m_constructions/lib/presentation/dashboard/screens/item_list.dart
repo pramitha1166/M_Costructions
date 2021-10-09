@@ -1,8 +1,8 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:m_constructions/application/item_list/item_list_state_provider.dart';
+import 'package:m_constructions/domain/item_list/product_model.dart';
 import 'package:m_constructions/presentation/app/widgets/common_rounded_button.dart';
 import 'package:m_constructions/presentation/dashboard/screens/widgets/item_row.dart';
 
@@ -67,7 +67,17 @@ class ItemList extends HookConsumerWidget {
                 ),
               ),
               // inventoryData.value
-              for (var value in listData) ItemRow(),
+              for (var value in listData)
+                ItemRow(
+                  title: value.title,
+                  quantity: value.quantity.toString(),
+                  onPressed: (id) {
+                    ref
+                        .read(itemListStateNotifierProvider.notifier)
+                        .deleteItem(filter(listData, id ?? ""), id ?? "");
+                  },
+                  id: value.id,
+                ),
 
               SizedBox(
                 height: 100,
@@ -81,5 +91,9 @@ class ItemList extends HookConsumerWidget {
         ),
       ),
     );
+  }
+
+  List<Item> filter(List<Item> list, String id) {
+    return list.where((element) => element.id != id).toList();
   }
 }

@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class DeliveryRow extends StatelessWidget {
-  const DeliveryRow({Key? key}) : super(key: key);
+  const DeliveryRow({
+    Key? key,
+    required this.title,
+    required this.description,
+  }) : super(key: key);
+
+  final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +18,7 @@ class DeliveryRow extends StatelessWidget {
         Expanded(
           child: Container(
             height: 40,
-            child: Center(child: Text('Item')),
+            child: Center(child: Text(title)),
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black),
             ),
@@ -20,7 +27,7 @@ class DeliveryRow extends StatelessWidget {
         Expanded(
           child: Container(
             height: 40,
-            child: Center(child: Text('Quantity')),
+            child: Center(child: Text(description)),
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black),
             ),
