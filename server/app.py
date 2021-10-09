@@ -5,6 +5,8 @@ from api.product import product_route
 from api.user import user_route
 from mongoengine import connect
 
+from tests.test import login
+
 app = Flask(__name__)
 app.register_blueprint(user_route)
 app.register_blueprint(product_route)
