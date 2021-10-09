@@ -20,4 +20,18 @@ class ItemListRepository extends IItemListRepository {
     }
     return data;
   }
+
+  @override
+  Future<List<Item>> deleteItem({String? id}) async {
+    List<Item> data = [];
+    try {
+      var dio = Dio();
+      await dio
+          .post(config.backendUrl + '/api/v2/product/delete', data: id)
+          .then((value) => {});
+    } catch (error, stacktrace) {
+      throw Exception("Exception occured: $error stackTrace: $stacktrace");
+    }
+    return data;
+  }
 }
